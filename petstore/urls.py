@@ -26,23 +26,11 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin-edu-9005!/', admin.site.urls),
     path('', include('simbapp.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-
-#When deploying to Heroku:
-
-# [
-
-# ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-
-
-
-#In Development:
+] 
 
 #We add this if we want to serve media/static in development.
 #If 'django.contrib.staticfiles' app is NOT deleted in settings.py, then we only need to add the 'media' part.
 #If 'django.contrib.staticfiles' app IS deleted, we need both, media and static code shown below.
-# if settings.DEBUG: 
-#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    #urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+if settings.DEBUG: 
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
