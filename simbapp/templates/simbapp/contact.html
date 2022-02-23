@@ -1,0 +1,21 @@
+{% extends 'simbapp/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mb-5">
+   <div class="row align-items-center">
+      <div class="col-sm-6">
+         <img src="{% static 'simbapp/img/laptop-code.jpg' %}" alt="image goes here" class="img-fluid">
+      </div>
+      <div class="col-sm-6 p-5">
+         <h1 class="display-3 mb-4">Reach us at:</h1>
+         <p class="lead"><strong>Phone: </strong>&nbsp;+305 581368-4858</p>
+         <p class="lead mb-5"><strong>E-mail:</strong>&nbsp;contact.codenation@codenation.com</p>
+         <button class="btn btn-success">Have a Question?</button>
+      </div>
+     
+   </div>
+</div>
+   
+{% endblock %}

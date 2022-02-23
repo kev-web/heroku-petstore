@@ -1,0 +1,21 @@
+{% extends 'simbapp/base.html' %}
+{% load static %}
+
+{% block content %}
+
+   <div class="container mb-5">
+      <div class="row align-items-center">
+         <div class="col-sm-6">
+            <h1 class="display-3 mb-4">What do we do?</h1>
+            <p class="lead mb-5">We are a tech company that produces high quality images for our clients. We are passionate about 
+               presenting to the world all the amazing innovations being created around the world.
+            </p>
+            <button class="btn btn-warning">Learn More</button>
+         </div>
+         <div class="col-sm-6">
+            <img src="{% static 'simbapp/img/robo-code.jpg' %}" alt="about image" class="img-fluid">
+         </div>
+      </div>
+   </div>
+   
+{% endblock %}

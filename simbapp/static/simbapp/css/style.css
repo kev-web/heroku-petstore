@@ -1,0 +1,16 @@
+*{
+    font-family: 'Consolas', Arial, sans-serif;
+}
+
+.base-body{
+    background-color: rgb(48, 48, 48);
+    color: beige;
+}
+
+.navbar-brand, .nav-link{
+    font-size: 18px;
+}
+
+.baseDiv{
+    height: 800px;
+}

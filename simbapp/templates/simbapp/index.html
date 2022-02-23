@@ -1,0 +1,65 @@
+{% extends 'simbapp/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+   <div class="container mb-5">
+      <div class="row align-items-center">
+         <div class="col-sm-6 p-0">
+            <img src="{% static 'simbapp/img/main-robot.jpg' %}" alt="index main image" class="img-fluid">
+         </div>
+         <div class="col-sm-6 p-5">
+            <h1 class="display-1 mb-4">HEROKU APP</h1>
+            <p class="lead mb-5">Interested in capturing your tech in history? Well, you have come to the right place!</p>
+            <button class="btn btn-warning">Learn More</button>
+         </div>
+      </div>
+   </div>
+
+   <div class="container mb-5 pt-5">
+      <h1 class="display-3">Our Image Gallery Uploads</h1>
+      <p class="lead">We are using Bootstrap 5 to design our frontend app.</p>
+   </div>
+   
+   <div class="container mb-3">
+      <div class="row justify-content-center">
+         {% for item in code_pics %}
+            <div class="col-sm-3 m-0 p-0">
+               <div class="container p-2 text-center">
+                  <img src="{{ item.picture.url }}" class="img-fluid">
+                  <p class="lead">Id: {{ item.id }}</p>
+                  <p class="lead">Name: {{ item.name }}</p>
+                  <p class="lead">Quantity: {{ item.quantity }}</p>
+               </div>
+            </div>
+         {% endfor %}
+      </div>
+   </div>
+
+   <div class="container mb-3">
+      <h1 class="display-4 mb-3">List of our Spaceships:</h1>
+      <table class="table table-light table-striped table-hover border">
+         <thead>
+            <tr class="text-center">
+               <th scope="col">#</th>
+               <th scope="col">Name</th>
+               <th scope="col">Age</th>
+               <th scope="col">Owner</th>
+            </tr>
+         </thead>
+         <tbody>
+            {% for item in dogs %}
+            <tr class="text-center">
+               <th scope="row">{{ item.id }}</th>
+               <td scope="row">{{ item.dog_name }}</td>
+               <td scope="row">{{ item.dog_age }}</td>
+               <td scope="row">{{ item.dog_owner }}</td>
+            </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+   </div>
+
+  
+{% endblock %}
